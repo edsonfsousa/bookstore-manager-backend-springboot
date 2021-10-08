@@ -7,7 +7,7 @@ COPY pom.xml /home/app
 RUN mvn -Dmaven.repo.local=/.m2 -f /home/app/pom.xml clean package
 
 FROM openjdk:17-jre
-COPY --from=build /home/app/target/superare-0.0.1-SNAPSHOT.jar /run.jar
+COPY --from=build /home/app/target/bookstoremanager-backend-0.0.1-SNAPSHOT.jar /run.jar
 
 ENV SERVER_PORT="8081"
 ENV DATA_SOURCE_URL="jdbc:postgresql://localhost:5432/superareDB"
