@@ -10,9 +10,9 @@ FROM openjdk:11-ea-17-jre-slim
 COPY --from=build /home/app/target/bookstoremanager-backend-0.0.1-SNAPSHOT.jar /run.jar
 
 ENV SERVER_PORT="8080"
-ENV DATA_SOURCE_URL="jdbc:postgresql://localhost:5432/superareDB"
-ENV DATA_SOURCE_USERNAME="postgres"
-ENV DATA_SOURCE_PASSWORD="qwe123*"
+ENV DATASOURCE_URL="jdbc:postgresql://localhost:5432/superareDB"
+ENV DATASOURCE_USERNAME="postgres"
+ENV DATASOURCE_PASSWORD="qwe123*"
 # RUN apk add --no-cache tzdata
 ENV TZ America/Fortaleza
 
