@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+  bookstoremanager-backend:
+    image: bookstoremanager-backen
+    container_name: bookstoremanager-backend
+    build: .
+    ports:
+      - "8061:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      SERVER_PORT: 8080
+      DATA_SOURCE_URL: jdbc:postgresql://host.docker.internal:5432/bookstoreDB
+      DATA_SOURCE_USERNAME: postgres
+      DATA_SOURCE_PASSWORD: qwe123*
