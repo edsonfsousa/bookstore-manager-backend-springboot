@@ -6,10 +6,10 @@ COPY src /home/app/src
 COPY pom.xml /home/app
 RUN mvn -Dmaven.repo.local=/.m2 -f /home/app/pom.xml clean package
 
-FROM openjdk:17-jre
+FROM openjdk:11-ea-17-jre-slim
 COPY --from=build /home/app/target/bookstoremanager-backend-0.0.1-SNAPSHOT.jar /run.jar
 
-ENV SERVER_PORT="8081"
+ENV SERVER_PORT="8080"
 ENV DATA_SOURCE_URL="jdbc:postgresql://localhost:5432/superareDB"
 ENV DATA_SOURCE_USERNAME="postgres"
 ENV DATA_SOURCE_PASSWORD="qwe123*"
